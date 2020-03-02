@@ -1,0 +1,14 @@
+<div class="favorite-films">
+  <ng-container *ngIf="favoriteFilms.length">
+
+  </ng-container>
+
+  <app-film *ngFor="let filmEl of favoriteFilms; trackBy: trackByFn; let i = index"
+            [film] = filmEl
+            [favorite] = true
+            (buttonClickEmit)="deleteFilm(i)"></app-film>
+
+  <div *ngIf="!favoriteFilms.length" class="warning">You haven't yet any favorite films!</div>
+</div>
+
+

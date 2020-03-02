@@ -1,0 +1,27 @@
+@import "../../shared/styles/variables";
+
+.nav {
+  display: flex;
+  height: 45px;
+
+  &__button {
+    width: 33%;
+    cursor: pointer;
+    color: $mainGreyColor;
+    text-transform: uppercase;
+    font-family: $titleFont;
+    font-size: 16px;
+
+    &:hover {
+      color: $mainLightColor;
+    }
+    &:active {
+      color: $mainGreyColor;
+    }
+  }
+
+  .active {
+    color: orange;
+    font-size: 20px;
+  }
+}

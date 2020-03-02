@@ -1,0 +1,12 @@
+<div *ngIf="!bubbleChartData" class="loader d-flex flex-vertical-center flex-horizontally-center">
+  <app-loader class="d-flex flex-vertical-center"></app-loader>
+</div>
+
+<div class="decades" *ngIf="bubbleChartData">
+  <button *ngIf="toggleButton"
+          mat-raised-button color="primary"
+          class="back-btn"
+          (click)="updateBubbleChartData()">Back to decades</button>
+
+  <app-bubble-chart [filmsData]="bubbleChartData" (showButton)="toggleButton = $event"></app-bubble-chart>
+</div>

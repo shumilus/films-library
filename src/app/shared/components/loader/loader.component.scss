@@ -1,0 +1,49 @@
+.loader {
+  font-size: 10px;
+  position: relative;
+  width: 4em;
+  height: 1em;
+  margin: 0 auto;
+}
+
+.dot {
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  background: #fff;
+  position: absolute;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.dot1, .dot2 {
+  left: 0;
+}
+
+.dot3 { left: 2em; }
+
+.dot4 { left: 4em; }
+
+@keyframes reveal {
+  from { transform: scale(0.001); }
+  to { transform: scale(1); }
+}
+
+@keyframes slide {
+  to { transform: translateX(2em) }
+}
+
+
+.dot1 {
+  animation-name: reveal;
+}
+
+.dot2, .dot3 {
+  animation-name: slide;
+}
+
+.dot4 {
+  animation-name: reveal;
+  animation-direction: reverse; /* thx @HugoGiraudel */
+}

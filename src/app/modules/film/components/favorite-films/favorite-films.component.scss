@@ -1,0 +1,13 @@
+@import "../../../../shared/styles/variables";
+
+.favorite-films {
+  padding: 15px;
+
+  .warning {
+    margin-top: 50px;
+    text-align: center;
+    font-style: $titleFont;
+    font-size: 20px;
+    color: $mainGreyColor;
+  }
+}

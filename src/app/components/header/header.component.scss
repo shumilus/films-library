@@ -1,0 +1,18 @@
+@import "../../shared/styles/variables";
+
+.header {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  background: $mainDarkColor;
+
+  &__title {
+    height: 55px;
+    color: $mainTextColor;
+    font-size: 22px;
+    font-family: $titleFont;
+    text-transform: uppercase;
+    border-bottom: 1px solid $mainGreyColor;
+  }
+}

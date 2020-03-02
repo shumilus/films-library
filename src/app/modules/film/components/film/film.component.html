@@ -1,0 +1,38 @@
+<div class="d-flex film">
+  <img src="{{film.urlPoster}}" alt="{{film?.title}}" class="film__img">
+  <div class="film__info d-flex flex-wrap flex-align-content">
+    <div>
+      <div class="film__info__text title d-flex flex-vertical-center">
+        <p>{{film?.title}}</p>
+        <p class="star-icon" *ngIf="film?.favorite"></p>
+      </div>
+
+      <p class="film__info__text">Year: {{film?.year}}</p>
+      <p class="film__info__text">Rating: {{film?.rating}}</p>
+      <div class="d-flex">
+        <p class="film__info__text" *ngFor="let genre of film?.genres">Genres: {{genre}}</p>
+      </div>
+      <div class="d-flex film__info__text">
+        <p *ngFor="let country of film?.countries">Country: {{country}}</p>
+      </div>
+      <div class="d-flex film__info__text">
+        <p>Director:&nbsp;</p>
+        <a *ngFor="let director of film?.directors"
+           href="https://www.imdb.com/name/{{director?.id}}/" target="_blank">
+          <p>{{director?.name}}</p>
+        </a>
+      </div>
+    </div>
+    <div class="btn-wrap d-flex flex-horizontally-start">
+      <button class="btn" mat-raised-button color="primary"
+              (click)="playVideo()">PLAY TRAILER</button>
+      <button class="btn" mat-raised-button color="{{favorite ? 'warn' : 'primary'}}"
+              *ngIf="!film?.favorite"
+              (click)="handelButtonClick(film)">{{favorite ? 'DELETE' : 'Add to favorite'}}</button>
+    </div>
+  </div>
+</div>
+
+<app-modal-window *ngIf="isOpenModal"
+                  [trailerLink]="this.trailerLink"
+                  (modalClick)="isOpenModal = !isOpenModal"></app-modal-window>

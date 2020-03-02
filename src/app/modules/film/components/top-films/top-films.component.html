@@ -1,0 +1,10 @@
+<div *ngIf="!films" class="loader d-flex flex-vertical-center flex-horizontally-center">
+  <app-loader class="d-flex flex-vertical-center"></app-loader>
+</div>
+
+<div *ngIf="films" class="top-films">
+ <app-film *ngFor="let filmEl of films; trackBy: trackByFn"
+           [film] = filmEl
+           [favorite] = false
+           (buttonClickEmit)="addToFavorite($event)"></app-film>
+</div>

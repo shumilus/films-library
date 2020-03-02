@@ -1,0 +1,37 @@
+@import "../../shared/styles/variables";
+
+.not-found-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .error-block {
+    position: relative;
+    height: 352px;
+    width: 533px;
+
+    .error {
+      position: absolute;
+      color: #FFFFFF;
+      font-family: $mainFont;
+      font-size: 300px;
+      font-weight: 800;
+      letter-spacing: 0.62px;
+      line-height: 352px;
+    }
+
+    .text {
+      position: absolute;
+      color: $mainGreyColor;
+      font-family: $mainFont;
+      font-size: 18px;
+      font-weight: 500;
+      width: 459px;
+      bottom: 116px;
+      left: 18px;
+      line-height: 28px;
+      text-align: center;
+    }
+  }
+}
