@@ -59,12 +59,14 @@ export class FilmsService {
       return films;
     }
     return films.map((film: IFilm) => {
-      return favoriteFilms.some((f) => film.idIMDB === f.idIMDB) ? film = {...film, favorite: true} : film;
+      return favoriteFilms.some((f) => film.idIMDB === f.idIMDB) ? film = {...film, favorite: true} : {...film, favorite: false};
     });
   }
 
-  public deleteFilm(films) {
+  public deleteFilm(films: IFilm[]) {
     localStorage.setItem('favoriteFilms', JSON.stringify(films));
+    const movies = this.setFavoriteFilms(this.films$.value);
+    this.films$.next(movies);
     this.toaster.success('The movie was successfully deleted!');
   }
 
